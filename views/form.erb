@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<% (1..16).each do |i| %>
+<li>
+    <div class="collapsible-header green">Relay<%= i %> (Expandable)</div>
+
+    <div class="collapsible-body">
+        <div>
+            <input type="text" name="Labels[Relay<%= i %>]" id="Relay<%= i %>" value="">
+        </div>
+        <div>
+            <input class="btn" type="button" value="Times" id="btnTimes<%= i %>" onClick="loadTimes('Times[Relay<%= i %>]')" />
+            <input class="btn" type="button" value="Intervals" id="btnIntervals<%= i %>" onClick="typeInterval('Times[Relay<%= i %>]')" />
+        </div>
+            <div  id="Times[Relay<%= i %>]">
+        </div>
+    </div>
+</li>
+<script> loadLabel('Relay<%= i %>') </script>
+<script> loadTimes('Times[Relay<%= i %>]') </script>
+<script> loadIntervals('Times[Relay<%= i %>]') </script>
+<% end %>

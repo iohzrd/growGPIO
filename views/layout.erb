@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> GrowGPIO </title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script> var obj = JSON.parse( '<%= @config %>' ); </script>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body onload="systemTime()">
+<form id="relays" method="POST" action="/">
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue lighten-3">
+            <a class="black-text brand-logo center">GrowGPIO</a>
+            <ul class="right">
+                <li><input id="relays" class="btn-large orange darken-3" type="submit" value="Save"></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="center-align">
+        <div>System Time:</div>
+        <div class="row">
+            <div class="col s4 offset-s4">
+                <input type="time" name="SystemTime" id="SystemTime" value="">
+            </div>
+        </div>
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <%= yield %>
+        </ul>
+    </div>
+</div>
+</form>
+</body>
+</html>
